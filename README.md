@@ -21,14 +21,14 @@ Este script gestiona el movimiento del jugador, los estados de animación, y las
     - Suelo: Si el jugador cae, muestra un mensaje de derrota.
 - Cambio de nivel: Al recoger 9 objetos, pasa al siguiente nivel activando nuevos enemigos.
 #### Funciones principales
-- ´´´OnMove(InputValue movementValue)´´´: Captura la entrada de movimiento.
-- ´´´FixedUpdate()´´´: Mueve al jugador y cambia su estado en función de la altura o velocidad.
-- ´´´OnTriggerEnter(Collider other)´´´: Maneja las interacciones con objetos etiquetados.
-- ´´´SetCountText()´´´: Actualiza el texto del contador y controla la transición de nivel.
-- ´´´IsMoving()´´´: Verifica si el jugador se está moviendo.
-- ´´´IsIdle()´´´: Comprueba si el jugador está quieto.
-- ´´´IsAtCertainHeight()´´´: Detecta si el jugador está a una altura de vuelo.
-- ´´´currentActionState(string currentState)´´´: Cambia el color del jugador según su estado.
+- ```OnMove(InputValue movementValue)```: Captura la entrada de movimiento.
+- ```FixedUpdate()```: Mueve al jugador y cambia su estado en función de la altura o velocidad.
+- ```OnTriggerEnter(Collider other)```: Maneja las interacciones con objetos etiquetados.
+- ```SetCountText()```: Actualiza el texto del contador y controla la transición de nivel.
+- ```IsMoving()```: Verifica si el jugador se está moviendo.
+- ```IsIdle()```: Comprueba si el jugador está quieto.
+- ```IsAtCertainHeight()```: Detecta si el jugador está a una altura de vuelo.
+- ```currentActionState(string currentState)``` Cambia el color del jugador según su estado.
 #### Código destacable
 ```
 AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
@@ -253,3 +253,12 @@ Rotación constante:
   - 15°/s en el eje X
   - 30°/s en el eje Y
   - 45°/s en el eje Z
+
+## Explicación Juego
+### Objetivos 
+Los objetivos principales del juego será el de recoger 9 pickups con forma de seta en los dos niveles. El nº de pickups se resetéa cada vez que se cambia de nivel.
+
+### Flujo 
+Primero tendrás que pillar los 5 pickups del 1er escenario en el 1er nivel, lo que desbloquea la posibilidad de pasar al siguiente nivel gracias a la desactivación del collider de un muro invisible.   
+Tras conseguir los 4 pickups restantes, tu contador pasará a 0 y te perseguirán 3 enemigos en un escenario enorme. El objetivo es el mismo, conseguir los 9 pickups del escenario.   
+Al finalizar la recogida de pickups, se desactivarán los enemigos restantes (los otros ya estarán desactivados) y en el contador te pondrá un 'YOU WIN'.
