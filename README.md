@@ -11,14 +11,14 @@ Este script gestiona el movimiento del jugador, los estados de animación, y las
  #### Características principales
 - Movimiento: Control mediante teclas o acelerómetros (para móviles).
 - Estados del jugador:
-  -- Quieto: Jugador detenido, color rojo.
-  --Moviéndose: Jugador en movimiento, color azul.
-  --Volando: Jugador a una altura de ≥ 0.6, color verde.
+    -- Quieto: Jugador detenido, color rojo.
+    --Moviéndose: Jugador en movimiento, color azul.
+    --Volando: Jugador a una altura de ≥ 0.6, color verde.
 - Interacciones:
-  --PickUp: Recolecta objetos, aumenta el contador.
-  --Enemy y Enemy2: Derrota al jugador si se contacta.
-  --Muro: Se desactiva tras recolectar suficientes objetos.
-  --Suelo: Si el jugador cae, muestra un mensaje de derrota.
+    --PickUp: Recolecta objetos, aumenta el contador.
+    --Enemy y Enemy2: Derrota al jugador si se contacta.
+    --Muro: Se desactiva tras recolectar suficientes objetos.
+    --Suelo: Si el jugador cae, muestra un mensaje de derrota.
 - Cambio de nivel: Al recoger 9 objetos, pasa al siguiente nivel activando nuevos enemigos.
 #### Funciones principales
 - OnMove(InputValue movementValue): Captura la entrada de movimiento.
